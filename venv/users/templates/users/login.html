@@ -2,9 +2,13 @@
 
 {% block content %}
     <h1>Pagina de login</h1>
-    <form method="post">
-        {% csrf_token %} 
+    {% if form.errors %} 
+        <p> Your username and password didn't match. Please try again. </p>
+    {% endif %}
         {{ form.as_p }}
-        <button type="submit">Log In</button>
+    <form method =" post" action ="{% url 'users:login' %}">
+        {% csrf_token %}
+        <button name =" submit">log in</button>
+        <input type ="hidden" name ="next" value ="{% url 'learning_logs:index' %}"/>
     </form>
 {% endblock %}
