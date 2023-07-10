@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.contrib.auth import login, logout
+from django.contrib.auth import logout
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
